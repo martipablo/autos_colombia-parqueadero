@@ -10,22 +10,25 @@ T = TypeVar("T")
 
 # Hoja de estilos global (se aplica una sola vez en main.py).
 HOJA_ESTILOS = """
-QDialog { background: #f6f7f9; }
-QLabel { font-size: 14px; }
-QLabel#titulo { font-size: 20px; font-weight: 700; }
-QLabel#celda { font-size: 28px; font-weight: 700; color: #1b6e3a; }
-QLineEdit, QComboBox, QPlainTextEdit { font-size: 15px; padding: 6px; }
+QDialog { background: #000000; }
+QLabel { font-size: 14px; color: #f2f2f2; }
+QLabel#titulo { font-size: 20px; font-weight: 700; color: #ffffff; }
+QLabel#celda { font-size: 28px; font-weight: 700; color: #4ade80; }
+QLineEdit, QComboBox, QPlainTextEdit { font-size: 15px; padding: 6px; background: #1c1c1e;
+    color: #ffffff; border: 1px solid #555555; border-radius: 4px; selection-background-color: #2f5fd0; }
+QComboBox QAbstractItemView { background: #1c1c1e; color: #ffffff; selection-background-color: #2f5fd0; }
 QPushButton { font-size: 15px; padding: 8px 14px; border-radius: 6px;
-              background: #2f5fd0; color: white; }
-QPushButton:disabled { background: #b8c0d4; }
-QPushButton#secundario { background: #e3e6ee; color: #222; }
+              background: #2f5fd0; color: #ffffff; }
+QPushButton:hover { background: #4573e0; }
+QPushButton:disabled { background: #2a2a2e; color: #777777; }
+QPushButton#secundario { background: #2a2a2e; color: #f2f2f2; }
+QPushButton#secundario:hover { background: #3a3a40; }
 QPushButton#grande { font-size: 18px; padding: 16px; }
 """
 
-_ESTILO_ERROR = "color: #b3261e; font-weight: 600;"
-_ESTILO_OK = "color: #1b6e3a; font-weight: 600;"
-_ESTILO_NEUTRO = "color: #444;"
-
+_ESTILO_ERROR = "color: #ff6b6b; font-weight: 600;"
+_ESTILO_OK = "color: #4ade80; font-weight: 600;"
+_ESTILO_NEUTRO = "color: #d0d0d0;"
 
 def mostrar_error(etiqueta: QLabel, texto: str) -> None:
     """Pinta un mensaje de error (rojo) en la etiqueta de mensajes de la ventana."""
